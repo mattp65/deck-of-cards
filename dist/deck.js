@@ -656,12 +656,12 @@ var Deck = (function () {
           calcy = Math.round(-10 * __fontSize / 16)
           calcx = Math.round((i - 39 - 5.55) * 70 * __fontSize / 16);
         }
-
+        console.log(i,calcx, calcy, __fontSize);
         _card4.animateTo({
           delay: delay,
           duration: 250,
 
-          x: calcx,
+          x: calcx - 25,
           y: calcy,
           rot: 0,
 

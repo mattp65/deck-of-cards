@@ -41,6 +41,32 @@ body {
   padding: 0.25rem;
   text-align: center;
 }
+.cardheading {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  table-layout: fixed;
+}
+
+.cardheading .col {
+  width: 470;
+}
+.picks {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  text-align: center;
+}
+#landing2 {
+  position: fixed;
+  top: 550;
+  left: 0;
+  width: 100%;
+  height: 300;
+  background-color: #334d41;
+  padding: 0.25rem;
+  text-align: center;
+}
 #topbar button {
   background: none;
   border: 1px solid #fff;
