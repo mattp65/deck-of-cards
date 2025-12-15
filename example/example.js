@@ -21,15 +21,15 @@ $shuffle.textContent = 'Shuffle'
 $sort.textContent = 'Sort'
 $bysuit.textContent = 'By suit'
 $fan.textContent = 'Fan'
-$poker.textContent = 'Poker'
+$poker.textContent = 'Draft'
 $flip.textContent = 'Flip'
 
 $topbar.appendChild($flip)
 $topbar.appendChild($shuffle)
-$topbar.appendChild($bysuit)
-$topbar.appendChild($fan)
+//$topbar.appendChild($bysuit)
+//$topbar.appendChild($fan)
 $topbar.appendChild($poker)
-$topbar.appendChild($sort)
+//$topbar.appendChild($sort)
 
 var deck = Deck()
 
@@ -181,23 +181,13 @@ $poker.addEventListener('click', function () {
 deck.mount($container)
 
 deck.intro()
-deck.sort()
+deck.intro()
+//deck.sort()
 
 // secret message..
 
 var randomDelay = 10000 + 30000 * Math.random()
 
-setTimeout(function () {
-  printMessage('Psst..I want to share a secret with you...')
-}, randomDelay)
-
-setTimeout(function () {
-  printMessage('...try clicking all kings and nothing in between...')
-}, randomDelay + 5000)
-
-setTimeout(function () {
-  printMessage('...have fun ;)')
-}, randomDelay + 10000)
 
 function printMessage (text) {
   var animationFrames = Deck.animationFrames

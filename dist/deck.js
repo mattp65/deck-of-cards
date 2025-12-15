@@ -588,7 +588,7 @@ var Deck = (function () {
           duration: 200,
 
           x: plusminus(Math.random() * 40 + 20) * ____fontSize / 16,
-          y: -z,
+          y: -z + 100,
           rot: 0
         });
         _card3.animateTo({
@@ -596,7 +596,7 @@ var Deck = (function () {
           duration: 200,
 
           x: -z,
-          y: -z,
+          y: -z + 120,
           rot: 0,
 
           onStart: function onStart() {
@@ -623,9 +623,9 @@ var Deck = (function () {
 
         __fontSize = fontSize();
 
-        cards.slice(-5).reverse().forEach(function (card, i) {
+        cards.slice(-52).reverse().forEach(function (card, i) {
           card.poker(i, len, function (i) {
-            card.setSide('front');
+            card.setSide('back');
             if (i === 4) {
               next();
             }
@@ -637,14 +637,32 @@ var Deck = (function () {
       var $el = _card4.$el;
 
       _card4.poker = function (i, len, cb) {
-        var delay = i * 250;
+        var delay = i * 150;
+        var calcx = Math.round((i - 6.55) * 70 * __fontSize / 16);
+        var calcy = Math.round(-110 * __fontSize / 16);
+        if (i < 13 ){
+          calcy = Math.round(-310 * __fontSize / 16)
+          calcx = Math.round((i - 5.55) * 70 * __fontSize / 16);
+        }
+        else if (i < 26 ){
+          calcy = Math.round(-210 * __fontSize / 16)
+          calcx = Math.round((i - 13 - 5.55) * 70 * __fontSize / 16);
+        }
+        else if (i < 39 ){
+          calcy = Math.round(-110 * __fontSize / 16)
+          calcx = Math.round((i - 26 - 5.55) * 70 * __fontSize / 16);
+        }
+        else {
+          calcy = Math.round(-10 * __fontSize / 16)
+          calcx = Math.round((i - 39 - 5.55) * 70 * __fontSize / 16);
+        }
 
         _card4.animateTo({
           delay: delay,
           duration: 250,
 
-          x: Math.round((i - 2.05) * 70 * __fontSize / 16),
-          y: Math.round(-110 * __fontSize / 16),
+          x: calcx,
+          y: calcy,
           rot: 0,
 
           onStart: function onStart() {
@@ -691,7 +709,7 @@ var Deck = (function () {
         $el.style.opacity = 0;
 
         _card5.x = -z;
-        _card5.y = -250 - z;
+        _card5.y = -250 - z  + 120;
         _card5.rot = 0;
 
         _card5.animateTo({
@@ -699,7 +717,7 @@ var Deck = (function () {
           duration: 1000,
 
           x: -z,
-          y: -z,
+          y: -z + 120,
 
           onStart: function onStart() {
             $el.style.zIndex = i;
